@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="sismiop">
+  <head>
+    <title>Angular Test</title>
+    <script src="angular.min.js"></script>
+    <script src="jquery.js"></script>
+    <script src="soal1script.js"></script>
+  </head>
+  <body>
+    <div ng-controller="soal1">
+      <h1>Soal 1</h1>
+      <label>Kata: </label>
+      <input type="text" ng-model="kataUser" placeholder="Masukkan kata disini">
+      <hr>
+      <h3> Kata: {{kataUser}} </h3>
+    </div>
+    <div ng-controller="soal2">
+      <h1>Soal 2</h1>
+      <input type="number" ng-model="inputAngka"/>
+      <hr>
+      <h3> {{ inputAngka | currency:"IDR ":2}} </h3>
+    </div>
+    <div ng-controller="soal3">
+      <h1>Soal 3</h1>
+      <ul>
+       <li ng-repeat=" data in user track by $index">
+         <span> {{$index+1}}. {{data}} </span>
+       </li>
+      </ul>
+    </div>
+    <div ng-controller="soal4">
+      <h1>Soal 4</h1>
+      <select ng-model="user">
+        <option ng-repeat="key in dataSelectionKeys" ng-value="key">{{dataSelection[key]}}</option>
+      </select>
+    </div>
+  </body>
+</html>
